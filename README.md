@@ -11,7 +11,7 @@ To use the project
 You need to Poetry corpus and Romantism Corpus. These files are not included on the git page due to copyright restrictions.
 
 1. Poetry Corpus should be in a folder named "siirVeriTabani" and every poem should be a different file.
-2. Romatism Corpus has to be one file named éasksozleri.txt"
+2. Romatism Corpus has to be one file named asksozleri.txt"
 
 After that you can run asur.py.
 
