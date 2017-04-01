@@ -17,7 +17,7 @@ class Markovs:
 		self.compile()
 
 	def process_lines_from(self, filename):
-		with open(filename, 'r') as f:
+		with open(filename, 'r', encoding='utf-8') as f:
 			for line in f:
 				line = line.strip()
 				if len(line) > 0:

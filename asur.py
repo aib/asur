@@ -24,13 +24,13 @@ def _process_romvectors(poemdir, romlines, cachefile):
 		n = 0
 		for filename in os.listdir(poemdir):
 			path = os.path.join(poemdir, filename)
-			with open(path, 'r') as f:
+			with open(path, 'r', encoding='utf-8') as f:
 				words = f.read().split()
 				romscorer.add_words(words)
 			n += 1
 			print("Processed poem %d" % (n,))
 
-		with open(romlines, 'r') as f:
+		with open(romlines, 'r', encoding='utf-8') as f:
 			n = 0
 			for line in f:
 				line = line.strip()
@@ -51,7 +51,7 @@ def _process_poems(dirname, cachefile):
 		n = 0
 		for filename in os.listdir(dirname):
 			path = os.path.join(dirname, filename)
-			with open(path, 'r') as f:
+			with open(path, 'r', encoding='utf-8') as f:
 				words = f.read().split()
 				scorer.add_words(words)
 			n += 1
