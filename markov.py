@@ -11,7 +11,7 @@ class MarkovChain:
 		if outp not in self._inputs[inp]:
 			self._inputs[inp][outp] = 0
 
-		self._inputs[inp][outp] += 1
+		self._inputs[inp][outp] += instances
 
 	def compile(self):
 		self._compiled = {}
