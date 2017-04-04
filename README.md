@@ -2,8 +2,11 @@
 
 A.S.U.R. is a collection of Python scripture designed to help people create their own verse-generating programs using stochaistic processes such as Markov chains. It's a direct descendant of the Deniz Yılmaz project.
 
+### Simplified version
 
-#Usage
+This project has a (very) simplified version demonstrating the usage of Markov chains to generate lines of text. It lives in the "simple" branch and/or the file "simple.py".
+
+### Usage
 
 To use the project
 
