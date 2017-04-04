@@ -30,7 +30,7 @@ def main():
 			while True:
 				if word == END_OF_LINE:
 					break
-				line += word + " "
+				line = line + " " + word
 				word = mc.get(word)
 
 			print(line.strip())
