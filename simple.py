@@ -13,6 +13,8 @@ def main():
 	with open('data.txt', 'r', encoding='utf-8') as f:
 		for line in f.readlines():
 			line = preprocess(line)
+			if len(line) == 0: # ignore blank lines
+				continue
 
 			previous_word = START_OF_LINE
 			for word in line.split():
