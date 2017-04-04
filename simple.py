@@ -3,6 +3,7 @@
 import markov
 
 import random
+import re
 
 def main():
 	mc = markov.MarkovChain(random.random)
@@ -11,7 +12,7 @@ def main():
 
 	with open('data.txt', 'r', encoding='utf-8') as f:
 		for line in f.readlines():
-			line = line.strip()
+			line = preprocess(line)
 
 			previous_word = START_OF_LINE
 			for word in line.split():
@@ -31,6 +32,27 @@ def main():
 				word = mc.get(word)
 
 			print(line.strip())
+
+def preprocess(line):
+	# lowercase Turkish letters
+	for pair in zip('ĞÜŞİÖÇIÂÎÛ', 'ğüşiöçıâîû'):
+		line = line.replace(pair[0], pair[1])
+
+	# lowercase all other letters
+	line = line.lower()
+
+	# remove accented Turkish letters
+	for pair in zip('âîû', 'aıu'):
+		line = line.replace(pair[0], pair[1])
+
+	# remove apostrophes
+	for char in '\'':
+		line = line.replace(char, '')
+
+	# replace everything else with a space
+	line = re.sub(r'[^a-zğüşöçı]', ' ', line)
+
+	return line
 
 if __name__ == '__main__':
 	main()
