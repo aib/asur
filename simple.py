@@ -7,8 +7,8 @@ import re
 
 def main():
 	mc = markov.MarkovChain(random.random)
-	START_OF_LINE = object()
-	END_OF_LINE = object()
+	START_OF_LINE = object() # special "word" at the beginning of every line
+	END_OF_LINE = object()   # special "word" at the end of every line
 
 	with open('data.txt', 'r', encoding='utf-8') as f:
 		for line in f.readlines():
